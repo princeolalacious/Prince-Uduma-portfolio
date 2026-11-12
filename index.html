@@ -3,9 +3,206 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="authour" content="Prince Uduma" />
+    <meta name="description" content="Prince Uduma portfolio" />
     <title>Prince Uduma portfolio</title>
+    <link rel="shortcut icon" href="/image/favicon.png" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Karla:ital,wght@0,200..800;1,200..800&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Teko:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    hi
+    <header>
+      <div>
+        <h2>
+          <a href="index.html">
+            <span class="p-deco">P</span>rince<span class="u-deco">U</span>duma
+            Profile</a
+          >
+        </h2>
+      </div>
+
+      <!-- NAV BAR -->
+      <nav>
+        <ul>
+          <li
+            id="themeToggle"
+            class="theme-toggle"
+            aria-label="Toggle dark mode"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </li>
+
+          <li><a href="#home" class="faq-link">Home</a></li>
+          <li><a href="#" class="signup-link">SignUp</a></li>
+          <li class="hideOnMobile"><a href="#" id="news-link">News</a></li>
+          <li class="hideOnMobile"><a href="#">About</a></li>
+          <li id="menuBtn" class="menu-toggle">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </li>
+        </ul>
+
+        <ul class="sidebar">
+          <li id="hideSidebar">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </li>
+          <li><a href="#" class="faq-link">FAQ</a></li>
+          <li><a href="#" class="signup-link">SignUp</a></li>
+          <li><a href="#" id="news-link-sidebar">News</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section id="home" class="home">
+        <div id="container">
+          <div id="hero_container">
+            <figure class="image">
+              <img
+                src="Image/princeprofilepicture.png.png"
+                alt="Prince Uduma profile picture"
+                loading="lazy"
+                class="profile_picture"
+              />
+
+              <figcaption>Prince Uduma profile picture</figcaption>
+            </figure>
+            <p class="hero_paragrapgh">
+              Hello I'm a <span>Frontend Developer</span> who turns ideas and
+              designs into fast, pixel-perfect websites and apps that feel
+              smooth on every screen and browser, helping your product look
+              credible and convert more visitors.
+            </p>
+          </div>
+        </div>
+
+        <!-- HERO SOCIALS -->
+        <ul class="socials">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/prince-uduma"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/2348168418893"
+              id="whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/princeolalacious"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:princeudumaukariwe@gmail.com" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </li>
+        </ul>
+
+        <!-- HERO BUTTONS -->
+        <div class="hero-buttons">
+          <a href="#contact" class="lets_connect">Let's connect</a>
+
+          <a href="/your-cv.pdf" class="download_cv">Download CV</a>
+        </div>
+      </section>
+
+      <!-- LEFTSIDEBAR ARTICLE -->
+      <article id="leftsidebar">
+        <div>
+          <p>
+            Name: <br />
+            <span>Prince Uduma</span>
+          </p>
+
+          <p>
+            Ocupation: <br />
+            <span
+              >Frontend Developer <br />Web Developer <br />
+              Web Designer</span
+            >
+          </p>
+
+          <p>
+            Availability: <br />
+            <span
+              >Available for Work <br />
+              Open to collaboration <br />
+              early-stage startup ideas</span
+            >
+          </p>
+
+          <p>
+            Remote-ready: <br />
+            <span> fully equipped, with reliable power and internet </span>
+          </p>
+        </div>
+      </article>
+
+      <!-- RIGHTSIDEBAR -->
+      <article id="rightsidebar">
+        <div>
+          <p>
+            Fontend Developement: <br />
+            <span
+              >HTML.&nbsp; CSS.&nbsp; JavaScript.&nbsp; Tailwind CSS.&nbsp;
+              Vite.&nbsp;React.&nbsp; Git & GitHub.&nbsp; Figma. &nbsp;Google
+              Stitch</span
+            >
+          </p>
+
+          <p>
+            CMS & E-commerce: <br />
+            <span
+              >WordPress ·&nbsp; Elementor ·&nbsp; WooCommerce ·&nbsp; Plugins &
+              API integrations</span
+            >
+          </p>
+
+          <p>
+            Deployment & Hosting: <br />
+            <span> Vercel · Netlify · Hostinger</span>
+          </p>
+        </div>
+      </article>
+    </main>
   </body>
 </html>
