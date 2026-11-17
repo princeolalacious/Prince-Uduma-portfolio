@@ -374,6 +374,7 @@ body {
   --bg: #000310;
   --text: #8e9091;
   --hero-shade: var(--on-accent);
+  --body-text: var(--text);
   --line: rgba(5, 204, 254, 0.28);
   --cut: 12px;
 
@@ -393,6 +394,7 @@ body {
   --bg: #f4f7fa;
   --text: #3d4650;
   --hero-shade: var(--nav-hover);
+  --body-text: var(--text);
   --line: rgba(0, 119, 163, 0.35);
 
   --header-bg: #ffffff;
@@ -403,6 +405,13 @@ body {
   --logo-hi: #0b1b2b;
   --logo-mid: #0077a3;
   color-scheme: light;
+}
+
+@supports (color: color-mix(in srgb, #000, #fff)) {
+  :root,
+  :root[data-theme="light"] {
+    --body-text: color-mix(in srgb, var(--text) 90%, var(--hero-shade));
+  }
 }
 
 /* ---------- GRID: left | hero | right ---------- */
@@ -477,7 +486,7 @@ body {
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--text);
+  color: var(--body-text);
 
   margin-bottom: 0.2rem;
 }
@@ -494,9 +503,9 @@ body {
 }
 
 .note {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.3;
-  color: var(--text);
+  color: var(--body-text);
 }
 
 /* Cut-corner "open for hire" bar */
@@ -631,8 +640,7 @@ body {
   max-width: 52ch;
   font-size: 1rem;
   line-height: 1.55;
-  color: var(--text);
-  color: color-mix(in srgb, var(--text) 90%, var(--hero-shade));
+  color: var(--body-text);
   font-weight: 500;
 }
 
@@ -841,7 +849,7 @@ body {
   margin: 0.5rem 0 2rem;
   font-family: "teko", sans-serif;
   font-size: 1rem;
-  color: var(--text);
+  color: var(--body-text);
   letter-spacing: 0.1em;
 }
 
@@ -928,7 +936,7 @@ body {
   font-family: "unbound", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--text);
+  color: var(--body-text);
 }
 
 .project_stack {
@@ -948,7 +956,7 @@ body {
 
 .project_hosting {
   font-size: 0.9rem;
-  color: var(--text);
+  color: var(--body-text);
 }
 
 .project_actions {
@@ -1036,10 +1044,10 @@ body {
 
 .about_text p {
   max-width: 62ch;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.65;
-  color: var(--text);
+  color: var(--body-text);
 }
 
 .about_panel {
@@ -1058,10 +1066,10 @@ body {
   width: fit-content;
   max-width: 100%;
   overflow-wrap: anywhere;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.3;
-  color: var(--text);
+  color: var(--body-text);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -1090,9 +1098,9 @@ body {
   width: 100%;
   padding: 0.7rem 0.85rem;
   font-family: "Rajdhani", "Karla", sans-serif;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 500;
-  color: var(--heading);
+  color: var(--body-text);
   background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 0;
@@ -1148,7 +1156,7 @@ body {
   min-height: 1.4rem;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text);
+  color: var(--body-text);
 }
 
 .form_status.is-success {
@@ -1183,7 +1191,7 @@ body {
 .footer_tagline {
   font-size: 1rem;
   line-height: 1.4;
-  color: var(--text);
+  color: var(--body-text);
 }
 
 .footer_links {
@@ -1198,7 +1206,7 @@ body {
 }
 
 .footer_links a {
-  color: var(--text);
+  color: var(--body-text);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -1219,8 +1227,8 @@ body {
 }
 
 .footer_copy {
-  font-size: 0.95rem;
-  color: var(--text);
+  font-size: 0.875rem;
+  color: var(--body-text);
   text-align: center;
 }
 
