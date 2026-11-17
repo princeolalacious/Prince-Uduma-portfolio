@@ -7,6 +7,14 @@
     <meta name="description" content="Prince Uduma portfolio" />
     <title>Prince Uduma portfolio</title>
     <link rel="shortcut icon" href="/image/favicon.png" type="image/x-icon" />
+    <script>
+      try {
+        if (localStorage.getItem("theme") === "light") {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="style.css" />
 
     <link
       rel="stylesheet"
@@ -31,19 +39,20 @@
     />
   </head>
   <body>
-    <header>
+    <!-- HEADER -->
+    <header class="header">
       <div>
         <h2>
-          <a href="index.html">
-            <span class="p-deco">P</span>rince<span class="u-deco">U</span>duma
-            Profile</a
-          >
+          <a href="index.html" class="logo_deco" aria-label="Prince portfolio">
+            <span class="p_deco">P</span><span class="rince">rince</span
+            ><span class="u_deco">portfolio</span>
+          </a>
         </h2>
       </div>
 
       <!-- NAV BAR -->
-      <nav>
-        <ul>
+      <nav class="navbar">
+        <ul class="unordered_list">
           <li
             id="themeToggle"
             class="theme-toggle"
@@ -52,11 +61,12 @@
             <i class="fa-solid fa-moon"></i>
           </li>
 
-          <li><a href="#home" class="faq-link">Home</a></li>
-          <li><a href="#" class="signup-link">SignUp</a></li>
-          <li class="hideOnMobile"><a href="#" id="news-link">News</a></li>
-          <li class="hideOnMobile"><a href="#">About</a></li>
-          <li id="menuBtn" class="menu-toggle">
+          <li><a href="#home" class="home_link">Home</a></li>
+          <li class="hideOnMobile"><a href="#projects">Projects</a></li>
+          <li class="hideOnMobile"><a href="#" class="about_link">About</a></li>
+
+          <li class="hideOnMobile"><a href="#">Contact</a></li>
+          <li id="menuBtn" class="menu_toggle">
             <i class="fa fa-bars" aria-hidden="true"></i>
           </li>
         </ul>
@@ -65,39 +75,40 @@
           <li id="hideSidebar">
             <i class="fa fa-times" aria-hidden="true"></i>
           </li>
-          <li><a href="#" class="faq-link">FAQ</a></li>
-          <li><a href="#" class="signup-link">SignUp</a></li>
-          <li><a href="#" id="news-link-sidebar">News</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="#" class="about_link">About</a></li>
+
+          <li><a href="#projects" id="project_sidebar">Projects</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <!-- HERO SECTION -->
+    <!-- HERO SECTION -->
+    <main class="hud">
+      <!-- HERO (center) -->
       <section id="home" class="home">
         <div id="container">
           <div id="hero_container">
+            <h1>Hello,</h1>
+            <p class="hero_paragrapgh">
+              I'm a <span>Frontend Developer</span> who turns ideas and designs
+              into fast, pixel-perfect websites and apps that feel smooth on
+              every screen and browser. I solve real business problems with
+              software, helping your product look credible and convert more
+              visitors.
+            </p>
+
             <figure class="image">
               <img
-                src="Image/princeprofilepicture.png.png"
+                src="image/profilepic.png"
                 alt="Prince Uduma profile picture"
-                loading="lazy"
                 class="profile_picture"
               />
-
-              <figcaption>Prince Uduma profile picture</figcaption>
+              <figcaption class="image_caption">Prince Uduma</figcaption>
             </figure>
-            <p class="hero_paragrapgh">
-              Hello I'm a <span>Frontend Developer</span> who turns ideas and
-              designs into fast, pixel-perfect websites and apps that feel
-              smooth on every screen and browser, helping your product look
-              credible and convert more visitors.
-            </p>
           </div>
         </div>
 
-        <!-- HERO SOCIALS -->
         <ul class="socials">
           <li>
             <a
@@ -137,72 +148,342 @@
           </li>
         </ul>
 
-        <!-- HERO BUTTONS -->
         <div class="hero-buttons">
           <a href="#contact" class="lets_connect">Let's connect</a>
-
           <a href="/your-cv.pdf" class="download_cv">Download CV</a>
         </div>
       </section>
 
-      <!-- LEFTSIDEBAR ARTICLE -->
-      <article id="leftsidebar">
-        <div>
-          <p>
-            Name: <br />
-            <span>Prince Uduma</span>
-          </p>
+      <!-- LEFT PANEL -->
+      <article id="leftsidebar" class="panel">
+        <div class="field">
+          <span class="label">Name</span>
+          <span class="value">Prince Uduma</span>
+        </div>
 
-          <p>
-            Ocupation: <br />
-            <span
-              >Frontend Developer <br />Web Developer <br />
-              Web Designer</span
-            >
-          </p>
+        <div class="field">
+          <span class="label">Occupation</span>
+          <span class="value">Frontend Developer</span>
+          <span class="value">Web Developer</span>
+          <span class="value">Web Designer</span>
+        </div>
 
-          <p>
-            Availability: <br />
-            <span
-              >Available for Work <br />
-              Open to collaboration <br />
-              early-stage startup ideas</span
-            >
-          </p>
+        <div class="field">
+          <span class="status">Availability</span>
+          <span class="note">Available for work</span>
+          <span class="note">Open to collaboration</span>
+          <span class="note">Early-stage startup ideas</span>
+        </div>
 
-          <p>
-            Remote-ready: <br />
-            <span> fully equipped, with reliable power and internet </span>
-          </p>
+        <div class="field">
+          <span class="status">Remote-ready</span>
+          <span class="note"
+            >Fully equipped, with reliable power and internet</span
+          >
         </div>
       </article>
 
-      <!-- RIGHTSIDEBAR -->
-      <article id="rightsidebar">
-        <div>
-          <p>
-            Fontend Developement: <br />
-            <span
-              >HTML.&nbsp; CSS.&nbsp; JavaScript.&nbsp; Tailwind CSS.&nbsp;
-              Vite.&nbsp;React.&nbsp; Git & GitHub.&nbsp; Figma. &nbsp;Google
-              Stitch</span
-            >
-          </p>
+      <!-- RIGHT PANEL -->
+      <article id="rightsidebar" class="panel">
+        <h3 class="panel_header">Skill set</h3>
 
-          <p>
-            CMS & E-commerce: <br />
-            <span
-              >WordPress ·&nbsp; Elementor ·&nbsp; WooCommerce ·&nbsp; Plugins &
-              API integrations</span
-            >
-          </p>
+        <div class="field">
+          <span class="label">Frontend development stack</span>
+          <ul class="chips">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Tailwind CSS</li>
+            <li>Vite</li>
+            <li>React</li>
+            <li>Git &amp; GitHub</li>
+            <li>Figma</li>
+            <li>Google Stitch</li>
+          </ul>
+        </div>
 
-          <p>
-            Deployment & Hosting: <br />
-            <span> Vercel · Netlify · Hostinger</span>
-          </p>
+        <div class="field">
+          <span class="label">CMS &amp; E-commerce</span>
+          <ul class="chips">
+            <li>WordPress</li>
+            <li>Elementor</li>
+            <li>WooCommerce</li>
+            <li>Plugins &amp; API integrations</li>
+          </ul>
+        </div>
+
+        <div class="field">
+          <span class="label">Deployment &amp; hosting</span>
+          <ul class="chips">
+            <li>Vercel</li>
+            <li>Netlify</li>
+            <li>Hostinger</li>
+          </ul>
+        </div>
+
+        <div class="field">
+          <span class="label">Currently leveling up</span>
+          <ul class="chips chips--next">
+            <li>Next.js</li>
+            <li>TypeScript</li>
+            <li>Backend</li>
+          </ul>
         </div>
       </article>
     </main>
+
+    <!-- PROJECT SECTION -->
+
+    <section id="projects" class="projects" aria-labelledby="projects_title">
+      <h4 class="projects_title" id="projects_title">Projects</h4>
+      <p class="projects_intro">
+        Selected work. Explore demos, code, and tech stacks.
+      </p>
+      <ul class="project_list" id="projectList"></ul>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about" aria-labelledby="about_title">
+      <h2 class="projects_title" id="about_title">About</h2>
+      <p class="projects_intro">
+        Who I am, how I work, and what I can build for you.
+      </p>
+
+      <div class="about_grid">
+        <div class="about_text">
+          <p>
+            I'm Prince Uduma, a frontend developer who turns designs and ideas
+            into fast, pixel-perfect websites and apps. I build with HTML, CSS,
+            JavaScript, Tailwind CSS and React, and I'm just as comfortable
+            delivering WordPress and WooCommerce sites when a business needs a
+            store or a site it can manage on its own.
+          </p>
+          <p>
+            I care about interfaces that feel smooth on every screen and
+            browser, and about the business behind them. A credible, fast
+            website gives visitors a reason to trust you and to take action, so
+            I start every project by understanding the problem, then design and
+            build the solution around it.
+          </p>
+          <p>
+            I'm currently leveling up in Next.js, TypeScript and backend
+            development. I'm open to freelance work, collaboration and
+            early-stage startup ideas, and I work remotely with reliable power
+            and internet.
+          </p>
+        </div>
+
+        <aside class="panel about_panel" aria-label="What I can build">
+          <div class="field">
+            <span class="label">What I can build</span>
+            <ul class="chips">
+              <li>Responsive websites</li>
+              <li>Web apps with React</li>
+              <li>Design to code from Figma</li>
+              <li>WordPress &amp; WooCommerce</li>
+              <li>API integrations</li>
+            </ul>
+          </div>
+
+          <div class="field">
+            <span class="label">How I work</span>
+            <span class="note">Clear communication and honest timelines</span>
+            <span class="note">Clean, readable, maintainable code</span>
+            <span class="note"
+              >Deployed and live on Vercel, Netlify or Hostinger</span
+            >
+          </div>
+
+          <div class="field">
+            <span class="status">Availability</span>
+            <span class="note">Available for work</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact" aria-labelledby="contact_title">
+      <h2 class="projects_title" id="contact_title">Contact</h2>
+      <p class="projects_intro">
+        Have a project or an idea? Send a message and I'll reply as soon as I
+        can.
+      </p>
+
+      <div class="contact_grid">
+        <aside class="panel contact_info" aria-label="Contact details">
+          <div class="field">
+            <span class="label">Email</span>
+            <a href="mailto:princeudumaukariwe@gmail.com" class="contact_link"
+              >princeudumaukariwe@gmail.com</a
+            >
+          </div>
+
+          <div class="field">
+            <span class="label">WhatsApp</span>
+            <a
+              href="https://wa.me/2348168418893"
+              class="contact_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >+234 816 841 8893</a
+            >
+          </div>
+
+          <div class="field">
+            <span class="label">LinkedIn</span>
+            <a
+              href="https://www.linkedin.com/in/prince-uduma"
+              class="contact_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >linkedin.com/in/prince-uduma</a
+            >
+          </div>
+
+          <div class="field">
+            <span class="label">GitHub</span>
+            <a
+              href="https://github.com/princeolalacious"
+              class="contact_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >github.com/princeolalacious</a
+            >
+          </div>
+        </aside>
+
+        <!-- Replace YOUR_FORM_ID with the ID from Formspree -->
+        <form
+          id="contactForm"
+          class="contact_form"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          novalidate
+        >
+          <div class="form_field">
+            <label class="label" for="cf_name">Name</label>
+            <input
+              type="text"
+              id="cf_name"
+              name="name"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="form_field">
+            <label class="label" for="cf_email">Email</label>
+            <input
+              type="email"
+              id="cf_email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="form_field">
+            <label class="label" for="cf_message">Message</label>
+            <textarea
+              id="cf_message"
+              name="message"
+              rows="6"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Spam trap: real visitors never see or fill this -->
+          <div class="form_hp" aria-hidden="true">
+            <label for="cf_gotcha">Leave this field empty</label>
+            <input
+              type="text"
+              id="cf_gotcha"
+              name="_gotcha"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+
+          <button type="submit" class="lets_connect form_submit">
+            Send message
+          </button>
+          <p
+            id="formStatus"
+            class="form_status"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site_footer">
+      <div class="footer_top">
+        <div class="footer_brand">
+          <a href="index.html" class="logo_deco" aria-label="Prince portfolio">
+            <span class="p_deco">P</span><span class="rince">rince</span
+            ><span class="u_deco">portfolio</span>
+          </a>
+        </div>
+
+        <p class="footer_copy">
+          &copy; <span id="footerYear">2026</span> Prince Uduma. All rights
+          reserved.
+        </p>
+
+        <div class="footer_actions">
+          <ul class="socials">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/prince-uduma"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/2348168418893"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/princeolalacious"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:princeudumaukariwe@gmail.com" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          </ul>
+          <a
+            href="#"
+            id="backToTop"
+            class="back_to_top"
+            aria-label="Back to top"
+          >
+            <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+    <script type="module" src="form.js"></script>
   </body>
 </html>
