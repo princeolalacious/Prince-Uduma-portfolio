@@ -20,15 +20,7 @@ const projects = [
     demo: "https://cinecrush.netlify.app/",
     repo: "https://github.com/princeolalacious/CineCrushmovie",
   },
-  {
-    title: "Tenzies",
-    summary: "Roll and freeze dice until all ten show the same number.",
-    stack: ["React", "Vite", "Tailwind CSS"],
-    hosting: "Vercel",
-    image: "image/tenzies.png",
-    demo: "https://tenziesgame-two.vercel.app/",
-    repo: "https://github.com/princeolalacious/Tenzies-Game",
-  },
+
   {
     title: "Planetary Facts",
     summary: "Explore and compare facts about planets across our solar system.",

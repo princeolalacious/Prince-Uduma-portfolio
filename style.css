@@ -550,10 +550,19 @@ body {
 
 #rightsidebar {
   border-left: 1.3px solid var(--cyan);
+  gap: 0.75rem;
 }
 #rightsidebar::before,
 #rightsidebar::after {
   display: none;
+}
+
+#rightsidebar .field {
+  gap: 0.1rem;
+}
+
+#rightsidebar .label {
+  margin-bottom: 0;
 }
 
 .chips {
@@ -561,6 +570,12 @@ body {
   flex-wrap: wrap;
   gap: 0.4rem;
   list-style: none;
+}
+
+#rightsidebar .chips {
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
 }
 
 .chips li {
@@ -793,6 +808,27 @@ body {
     grid-template-areas:
       "hero  hero"
       "left  right";
+  }
+}
+
+@media (min-width: 1101px) {
+  #leftsidebar {
+    align-self: stretch;
+    justify-content: flex-start;
+    gap: 3.5rem;
+  }
+
+  .hero-buttons {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hud {
+    grid-template-columns:
+      270px
+      minmax(0, 1fr)
+      clamp(360px, calc(25vw + 60px), 420px);
   }
 }
 
